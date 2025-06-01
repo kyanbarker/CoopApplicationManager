@@ -63,6 +63,8 @@ async function setFormValues() {
         setInputElementValue("location", jobDetails.location);
         setInputElementValue("type", jobDetails.type);
         const deadline = jobDetails.deadline; // e.g. 2024-12-30T05:00:00.000Z
+        if (!deadline)
+            return;
         console.log("deadline:", deadline);
         const formattedDeadline = deadline.split("T")[0];
         setInputElementValue("deadline", formattedDeadline);

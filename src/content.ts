@@ -124,12 +124,14 @@ function getDescriptionElement(): Element {
   )!;
 }
 
-function getDeadline(): Date {
-  const deadlineString: string = getDeadlineElement().textContent!;
+function getDeadline(): Date | null {
+  const deadlineElement: Element | null = getDeadlineElement();
+  if (!deadlineElement) return null;
+  const deadlineString: string = deadlineElement.textContent!;
   return new Date(deadlineString);
 }
 
-function getDeadlineElement(): Element {
+function getDeadlineElement(): Element | null {
   return document.querySelector("p[id=sy_formfield_job_deadline]")!;
 }
 

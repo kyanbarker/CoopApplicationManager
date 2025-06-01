@@ -100,7 +100,10 @@ function getDescriptionElement() {
     return document.querySelector("div.text-overflow.space-top-lg.text-gray.p-group.field-widget-tinymce");
 }
 function getDeadline() {
-    const deadlineString = getDeadlineElement().textContent;
+    const deadlineElement = getDeadlineElement();
+    if (!deadlineElement)
+        return null;
+    const deadlineString = deadlineElement.textContent;
     return new Date(deadlineString);
 }
 function getDeadlineElement() {
