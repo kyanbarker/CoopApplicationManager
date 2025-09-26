@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "NUWorks Chrome Extension",
+  "description": "A Chrome extension to scrape NUWorks.",
+  "version": "1.0",
+  "action": {
+    "default_popup": "src/popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "downloads",
+    "activeTab",
+    "scripting",
+    "webNavigation"
+  ],
+  "background": {
+    "service_worker": "dist/background.js",
+    "type": "module"
+  },
+  "host_permissions": [
+    "https://northeastern-csm.symplicity.com/students/app/jobs/detail/*",
+    "https://api.notion.com/v1/*"
+  ]
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Chrome Extension</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <b
+      >Add any job details you would like and click the button to upload them to
+      [app name]</b
+    >
+    <form id="jobDetailsForm">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required />
+      <br />
+      <label for="company">Company:</label>
+      <input type="text" id="company" name="company" required />
+      <br />
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required />
+      <br />
+      <label for="type">Type:</label>
+      <!-- <select id="type" name="type">
+        <option value="" selected disabled>Select an option</option>
+        <option value="Co-op">Co-op</option>
+        <option value="Full-time">Full-time</option>
+        <option value="Part-time">Part-time</option>
+        <option value="Internship">Internship</option>
+      </select> -->
+      <input
+        list="type-options"
+        id="type"
+        name="type"
+        placeholder="Enter or select the job type"
+      />
+      <datalist id="type-options">
+        <option value="Co-op">Co-op</option>
+        <option value="Full-time">Full-time</option>
+        <option value="Part-time">Part-time</option>
+        <option value="Internship">Internship</option>
+      </datalist>
+
+      <br />
+      <label for="deadline">Deadline:</label>
+      <input type="date" id="deadline" name="deadline" />
+      <br />
+      <label for="status">Status:</label>
+      <select id="status" name="status" required>
+        <option value="Not applied" selected>Not applied</option>
+        <option value="Applied">Applied</option>
+        <option value="Rejected">Rejected</option>
+        <option value="Accepted">Accepted</option>
+      </select>
+      <br />
+      <label for="payPerHour">Pay Per Hour:</label>
+      <input type="number" id="payPerHour" name="payPerHour" />
+      <br />
+      <label for="notes">Notes:</label>
+      <textarea id="notes" name="notes"></textarea>
+      <br />
+      <button type="submit">Upload job details</button>
+    </form>
+    <script src="../dist/popup.js"></script>
+  </body>
+</html>
